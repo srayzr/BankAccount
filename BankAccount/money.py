@@ -1,5 +1,8 @@
 class Money:
-    EXCHANGE_RATE = {"AMD": 1, "RUB": 4, "USD": 400, "EUR": 420}
+    EXCHANGE_RATE = {"AMD": 1,
+                     "RUB": 4,
+                     "USD": 400,
+                     "EUR": 420}
 
     def __init__(self, currency, amount):
         self.currency = currency
