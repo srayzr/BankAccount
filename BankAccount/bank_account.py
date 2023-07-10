@@ -1,6 +1,5 @@
 from money import Money
 
-
 class BankAccount:
     def __init__(self, account_number, owner, balance, currency):
         self.account_number = account_number
@@ -41,6 +40,7 @@ class BankAccount:
                 if amount.amount <= self.balance:
                     self.balance -= amount.amount
                     destination_account.balance += amount.amount
+                    return True
                 else:
                     print("Insufficient balance.")
             else:
