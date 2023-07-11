@@ -10,7 +10,7 @@ def check(function):
         print(
             f"***Check for transfer***\n"
             f"Money was successfully transferred from\n"
-            f"{account1} to\n{account2}.\nAt {d}/{t}"
+            f"{account1} to\n{account2}\nAmount is {account1.amount}.\nAt {d}/{t}"
             f"\n***Thank you for using our system***")
     else:
         print(f"***Check for transfer***\n"

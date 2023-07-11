@@ -11,6 +11,7 @@ class BankAccount:
         self.password = ""
         self.balance = balance
         self.currency = currency
+        self.amount = 0
 
     def __repr__(self):
         return "Account Number: {}\nOwner: {}\nBalance: {} {}".format(
@@ -53,6 +54,7 @@ class BankAccount:
             if amount.currency == self.currency:
                 if amount.amount <= self.balance:
                     self.balance -= amount.amount
+                    self.amount = amount
                     destination_account.balance += amount.amount
                     return True
                 else:
