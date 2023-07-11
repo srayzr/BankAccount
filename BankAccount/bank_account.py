@@ -17,16 +17,22 @@ class BankAccount:
         return "Account Number: {}\nOwner: {}\nBalance: {} {}".format(
             self.account_number, self.owner, self.balance, self.currency
         )
-
+    #Done
     def create_password(self):
         password = input("Enter your bank account password please\n")
         hasher = Hasher()
         self.password = hasher.hash_string(password)
         print("***Your password was successfully saved***")
-
+    #Done
     def get_password(self):
         print(f"***Hashed password is\n{self.password}***")
-
+    #Done
+    def take_off_money(self,amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Insufficient balance.")
+    #Done
     def deposit(self, amount):
         if isinstance(amount, Money):
             if amount.currency == self.currency:
@@ -36,7 +42,7 @@ class BankAccount:
                 self.balance += converted_amount.amount
         else:
             print("Invalid amount type.")
-
+    #Done
     def withdraw(self, amount):
         if isinstance(amount, Money):
             if amount.currency == self.currency:
@@ -48,7 +54,7 @@ class BankAccount:
                 print("Currency mismatch.")
         else:
             print("Invalid amount type.")
-
+    #Done
     def transfer(self, destination_account, amount):
         if isinstance(amount, Money):
             if amount.currency == self.currency:
