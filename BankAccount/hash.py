@@ -1,5 +1,6 @@
 import hashlib
 
+
 class Hasher:
     def __init__(self, algorithm='sha256'):
         self.algorithm = algorithm
